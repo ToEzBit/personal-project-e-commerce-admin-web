@@ -13,6 +13,7 @@ function LoginForm() {
     try {
       e.preventDefault();
       await login({ username, password });
+      navigate("/all-order");
       location.reload(false);
     } catch (err) {
       alert(err.response.data.message);

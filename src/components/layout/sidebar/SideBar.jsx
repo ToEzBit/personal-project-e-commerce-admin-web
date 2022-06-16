@@ -14,25 +14,54 @@ function SideBar() {
     window.location.reload(false);
   };
   return (
-    <div className="flex">
-      <div className="bg-main-theme-color text-white w-48 h-screen px-4 pt-16 ">
-        <div
-          className={`flex my-4  rounded-lg ${
-            location.pathname === "/order" ? "bg-violet-300" : ""
-          }`}
-        >
+    <div className="flex  h-full min-h-screen ">
+      <div className="bg-main-theme-color text-white w-48  px-4 pt-16 ">
+        <div className={`flex my-4  rounded-lg `}>
           <RiBillLine />
-          <Link className="hover:text-orange-300  " to="/orders">
-            Orders
+          <h1>Orders</h1>
+        </div>
+        <div className="ml-4 my-4 flex flex-col">
+          <Link
+            className={`hover:text-orange-300 my-4 rounded-lg px-4 ${
+              location.pathname === "/all-order" ? "bg-violet-300" : ""
+            }`}
+            to="/all-order"
+          >
+            All Order
+          </Link>
+          <Link
+            className={`hover:text-orange-300 my-4 rounded-lg px-4 ${
+              location.pathname === "/payment-order" ? "bg-violet-300" : ""
+            }`}
+            to="/payment-order"
+          >
+            Payment Order
+          </Link>
+          <Link
+            className={`hover:text-orange-300 my-4 rounded-lg px-4 ${
+              location.pathname === "/pending-order" ? "bg-violet-300" : ""
+            }`}
+            to="/pending-order"
+          >
+            Pending Order
+          </Link>
+          <Link
+            className={`hover:text-orange-300 my-4 rounded-lg px-4  ${
+              location.pathname === "/delivered-order" ? "bg-violet-300" : ""
+            }`}
+            to="/delivered-order"
+          >
+            Delivered Order
           </Link>
         </div>
+
         <div className="flex">
           <BiShoppingBag />
           <h1>Products</h1>
         </div>
         <div className="ml-4 my-4 flex flex-col">
           <Link
-            className={`hover:text-orange-300 my-4  rounded-lg ${
+            className={`hover:text-orange-300 my-4  rounded-lg px-4 ${
               location.pathname === "/product-view" ? "bg-violet-300" : ""
             }`}
             to="/product-view"
@@ -40,7 +69,7 @@ function SideBar() {
             Products View
           </Link>
           <Link
-            className={`hover:text-orange-300 my-4  rounded-lg ${
+            className={`hover:text-orange-300 my-4  rounded-lg px-4 ${
               location.pathname === "/product-add" ? "bg-violet-300" : ""
             }`}
             to="/product-add"
@@ -48,7 +77,7 @@ function SideBar() {
             Products Add
           </Link>
           <Link
-            className={`hover:text-orange-300 my-4  rounded-lg ${
+            className={`hover:text-orange-300 my-4  rounded-lg px-4 ${
               location.pathname === "/product-edit" ? "bg-violet-300" : ""
             }`}
             to="/product-edit"
@@ -56,7 +85,7 @@ function SideBar() {
             Products Edit
           </Link>
           <Link
-            className={`hover:text-orange-300 my-4  rounded-lg ${
+            className={`hover:text-orange-300 my-4  rounded-lg px-4 ${
               location.pathname === "/product-remove" ? "bg-violet-300" : ""
             }`}
             to="/product-remove"
