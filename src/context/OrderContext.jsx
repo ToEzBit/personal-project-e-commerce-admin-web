@@ -7,6 +7,7 @@ function OrderContextProvider({ children }) {
   const [excludeNewOrder, setExcludeNewOrder] = useState([]);
   const [paymentOrder, setPaymentOrder] = useState([]);
   const [pendingOrder, setPendingOrder] = useState([]);
+  const [canCancelOrder, setCanCancelOrder] = useState([]);
   const [reRerender, setRerender] = useState(false);
 
   useEffect(() => {
@@ -19,6 +20,14 @@ function OrderContextProvider({ children }) {
       setPaymentOrder(paymentOrder);
       const pendingOrder = res.filter((el) => el.status === "pending");
       setPendingOrder(pendingOrder);
+      const canCancelOrder = res.filter(
+        (el) =>
+          el.status !== "neworder" &&
+          el.status !== "delivered" &&
+          el.status !== "succeed" &&
+          el.status !== "canceled"
+      );
+      setCanCancelOrder(canCancelOrder);
     };
     fetch();
   }, [reRerender]);
@@ -31,6 +40,7 @@ function OrderContextProvider({ children }) {
         paymentOrder,
         setRerender,
         pendingOrder,
+        canCancelOrder,
       }}
     >
       {children}

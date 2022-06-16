@@ -47,9 +47,9 @@ function SideBar() {
           </Link>
           <Link
             className={`hover:text-orange-300 my-4 rounded-lg px-4  ${
-              location.pathname === "/delivered-order" ? "bg-violet-300" : ""
+              location.pathname === "/cancel-order" ? "bg-violet-300" : ""
             }`}
-            to="/delivered-order"
+            to="/cancel-order"
           >
             Cancel Order
           </Link>

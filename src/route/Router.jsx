@@ -5,7 +5,6 @@ import { useAuth } from "../context/AuthContext";
 import AllOrderPage from "../page/AllOrderPage";
 import PaymentOrderPage from "../page/PaymentOrderPage";
 import PendingOrderPage from "../page/PendingOrderPage";
-import DeliveredOrderPage from "../page/DeliveredOrderPage";
 import CancelOrderPage from "../page/CancelOrderPage";
 import LoginPage from "../page/LoginPage";
 import ProductAdd from "../page/ProductAdd";
@@ -23,7 +22,6 @@ function Router() {
             <Route path="/all-order" element={<AllOrderPage />} />
             <Route path="/payment-order" element={<PaymentOrderPage />} />
             <Route path="/pending-order" element={<PendingOrderPage />} />
-            <Route path="/delivered-order" element={<DeliveredOrderPage />} />
             <Route path="/cancel-order" element={<CancelOrderPage />} />
             <Route path="/product-add" element={<ProductAdd />} />
             <Route path="/product-view" element={<ProductView />} />
