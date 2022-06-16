@@ -8,3 +8,7 @@ export const getOrders = async () => {
 export const confirmPayment = async (orderId) => {
   await axios.patch(`/admins/confirm-payment`, { orderId });
 };
+
+export const submitTracking = async (orderId, trackingNumber) => {
+  await axios.patch(`/admins/tracking`, { orderId, trackingNumber });
+};
