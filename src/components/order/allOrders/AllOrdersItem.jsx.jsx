@@ -25,7 +25,7 @@ function AllOrdersItem({
           {totalPrice}
         </td>
         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-          {status}
+          {status.toUpperCase()}
         </td>
         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
           <ModalContainer

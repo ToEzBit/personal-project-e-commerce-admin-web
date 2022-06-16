@@ -5,6 +5,8 @@ const OrderContext = createContext();
 function OrderContextProvider({ children }) {
   const [orders, setOrders] = useState([]);
   const [excludeNewOrder, setExcludeNewOrder] = useState([]);
+  const [paymentOrder, setPaymentOrder] = useState([]);
+  const [reRerender, setRerender] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
@@ -12,12 +14,16 @@ function OrderContextProvider({ children }) {
       setOrders(res);
       const excludeNewOrder = res.filter((el) => el.status !== "neworder");
       setExcludeNewOrder(excludeNewOrder);
+      const paymentOrder = res.filter((el) => el.status === "payment");
+      setPaymentOrder(paymentOrder);
     };
     fetch();
-  }, []);
+  }, [reRerender]);
 
   return (
-    <OrderContext.Provider value={{ orders, excludeNewOrder }}>
+    <OrderContext.Provider
+      value={{ orders, excludeNewOrder, paymentOrder, setRerender }}
+    >
       {children}
     </OrderContext.Provider>
   );

@@ -51,7 +51,7 @@ function SideBar() {
             }`}
             to="/delivered-order"
           >
-            Delivered Order
+            Cancel Order
           </Link>
         </div>
 

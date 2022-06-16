@@ -4,3 +4,7 @@ export const getOrders = async () => {
   const res = await axios.get(`/admins/orders`);
   return res.data.orders;
 };
+
+export const confirmPayment = async (orderId) => {
+  await axios.patch(`/admins/confirm-payment`, { orderId });
+};

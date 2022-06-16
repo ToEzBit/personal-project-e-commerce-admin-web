@@ -1,9 +1,9 @@
 import React from "react";
-import { useOrder } from "../../../context/OrderContext.jsx";
-import AllOrdersItem from "./AllOrdersItem.jsx.jsx";
+import { useOrder } from "../../../context/OrderContext";
+import PaymentOrdersItem from "./PaymentOrdersItem";
 
-function AllOrders() {
-  const { excludeNewOrder } = useOrder();
+function PaymentOrdersContainer() {
+  const { paymentOrder, setRerender } = useOrder();
 
   return (
     <div className="flex flex-col mt-12">
@@ -35,7 +35,7 @@ function AllOrders() {
                     scope="col"
                     className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    <h1>STATUS</h1>
+                    <h1>SLIP PAYMENT</h1>
                   </th>
                   <th
                     scope="col"
@@ -46,22 +46,18 @@ function AllOrders() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                {excludeNewOrder.map((el, idx) => {
-                  return (
-                    <AllOrdersItem
-                      key={idx}
-                      id={el.id}
-                      createdAt={el.createdAt}
-                      status={el.status}
-                      totalPrice={el.totalPrice}
-                      address={el.Address}
-                      user={el.User}
-                      OrderProducts={el.OrderProducts}
-                      slip={el.slip}
-                      trackingNumber={el.trackingNumber}
-                    />
-                  );
-                })}
+                {paymentOrder &&
+                  paymentOrder.map((el) => {
+                    return (
+                      <PaymentOrdersItem
+                        id={el.id}
+                        createdAt={el.createdAt}
+                        totalPrice={el.totalPrice}
+                        slip={el.slip}
+                        setRerender={setRerender}
+                      />
+                    );
+                  })}
               </tbody>
             </table>
           </div>
@@ -71,4 +67,4 @@ function AllOrders() {
   );
 }
 
-export default AllOrders;
+export default PaymentOrdersContainer;

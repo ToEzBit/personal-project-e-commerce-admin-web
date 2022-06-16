@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="flex justify-around  w-[83vw] ">
+    <div className="flex justify-around  w-[83vw] my-8">
       <div className="bg-payment-notification-color w-34 px-4 py-8  rounded-lg">
         <h1 className="text-xl font-bold">Payment Orders</h1>
         <h1 className="text-center text-[#00598A] text-2xl font-bold">300</h1>

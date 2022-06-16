@@ -1,7 +1,6 @@
 import React from "react";
 
 function ModalFooter({ address, slip, trackingNumber }) {
-  console.log(trackingNumber);
   return (
     <div className="modal-footer flex flex-col flex-shrink-0 flex-wrap  justify-center p-4 border-t border-gray-200 rounded-b-md">
       <div className="flex justify-between">
