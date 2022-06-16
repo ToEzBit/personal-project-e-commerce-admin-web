@@ -4,7 +4,14 @@ import ModalHeader from "./ModalHeader";
 import ModalFooter from "./ModalFooter";
 import ModalBody from "./ModalBody";
 
-function ModalContainer({ id, user, OrderProducts, address, slip }) {
+function ModalContainer({
+  id,
+  user,
+  OrderProducts,
+  address,
+  slip,
+  trackingNumber,
+}) {
   return (
     <>
       <ModalBtn message="view" id={id} />
@@ -19,7 +26,11 @@ function ModalContainer({ id, user, OrderProducts, address, slip }) {
           <div className="modal-content border-none shadow-lg  flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
             <ModalHeader id={id} user={user} />
             <ModalBody OrderProducts={OrderProducts} />
-            <ModalFooter address={address} slip={slip} />
+            <ModalFooter
+              address={address}
+              slip={slip}
+              trackingNumber={trackingNumber}
+            />
           </div>
         </div>
       </div>

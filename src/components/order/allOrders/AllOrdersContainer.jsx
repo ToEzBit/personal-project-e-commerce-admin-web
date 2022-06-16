@@ -58,6 +58,7 @@ function AllOrders() {
                       user={el.User}
                       OrderProducts={el.OrderProducts}
                       slip={el.slip}
+                      trackingNumber={el.trackingNumber}
                     />
                   );
                 })}

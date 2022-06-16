@@ -10,6 +10,7 @@ function AllOrdersItem({
   user,
   address,
   slip,
+  trackingNumber,
 }) {
   return (
     <>
@@ -33,6 +34,7 @@ function AllOrdersItem({
             OrderProducts={OrderProducts}
             address={address}
             slip={slip}
+            trackingNumber={trackingNumber}
           />
         </td>
       </tr>
