@@ -8,13 +8,16 @@ function OrderContextProvider({ children }) {
   const [paymentOrder, setPaymentOrder] = useState([]);
   const [pendingOrder, setPendingOrder] = useState([]);
   const [canCancelOrder, setCanCancelOrder] = useState([]);
+  const [deliveredOrder, setDeliveredOrder] = useState([]);
   const [reRerender, setRerender] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
       const res = await getOrders();
       setOrders(res);
-      const excludeNewOrder = res.filter((el) => el.status !== "neworder");
+      const excludeNewOrder = res
+        .filter((el) => el.status !== "neworder")
+        .reverse();
       setExcludeNewOrder(excludeNewOrder);
       const paymentOrder = res.filter((el) => el.status === "payment");
       setPaymentOrder(paymentOrder);
@@ -28,6 +31,8 @@ function OrderContextProvider({ children }) {
           el.status !== "canceled"
       );
       setCanCancelOrder(canCancelOrder);
+      const deliveredOrder = res.filter((el) => el.status === "delivered");
+      setDeliveredOrder(deliveredOrder);
     };
     fetch();
   }, [reRerender]);
@@ -41,6 +46,7 @@ function OrderContextProvider({ children }) {
         setRerender,
         pendingOrder,
         canCancelOrder,
+        deliveredOrder,
       }}
     >
       {children}
