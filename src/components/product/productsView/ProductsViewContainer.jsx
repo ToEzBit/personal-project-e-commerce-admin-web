@@ -4,7 +4,7 @@ import ProductViewItem from "./ProductViewItem";
 
 function ProductsViewContainer() {
   const { products } = useProduct();
-  console.log(products);
+
   return (
     <div className="flex flex-col mt-12">
       <div className="-m-1.5 overflow-x-auto">
