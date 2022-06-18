@@ -3,7 +3,7 @@ import React from "react";
 function RightBar({ productStatus, setProductStatus, handlePushProduct }) {
   return (
     <div className="w-96 ml-24 ">
-      <div className="shadow-lg px-4 py-4">
+      <div className="shadow-md px-4 py-4">
         <h1 className="text-xl font-bold">Visibility</h1>
         <p className="text-slate-300">
           Set up product visibility for the customers
@@ -27,7 +27,7 @@ function RightBar({ productStatus, setProductStatus, handlePushProduct }) {
           </div>
         </div>
       </div>
-      <div className="shadow-lg px-4 py-4 ny-4">
+      <div className="shadow-md px-4 py-4 my-12">
         <h1 className="text-xl font-bold">Push</h1>
         <p className="text-slate-300">Push product to the market</p>
         <button

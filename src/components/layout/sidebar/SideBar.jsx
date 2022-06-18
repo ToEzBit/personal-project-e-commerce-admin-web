@@ -84,14 +84,6 @@ function SideBar() {
           >
             Products Edit
           </Link>
-          <Link
-            className={`hover:text-orange-300 my-4  rounded-lg px-4 ${
-              location.pathname === "/product-remove" ? "bg-violet-300" : ""
-            }`}
-            to="/product-remove"
-          >
-            Products Remove
-          </Link>
         </div>
         <hr className="mx-4 my-4" />
         <div className="flex">

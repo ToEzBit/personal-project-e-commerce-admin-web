@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import ProductEditContainer from "../components/product/productEdit/ProductEditContainer";
 
 function ProductEdit() {
-  return <div>ProductEdit</div>;
+  return (
+    <div>
+      <ProductEditContainer />
+    </div>
+  );
 }
 
 export default ProductEdit;

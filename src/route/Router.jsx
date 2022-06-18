@@ -10,7 +10,6 @@ import LoginPage from "../page/LoginPage";
 import ProductAdd from "../page/ProductAdd";
 import ProductView from "../page/ProductView";
 import ProductEdit from "../page/ProductEdit";
-import ProductRemove from "../page/ProductRemove";
 
 function Router() {
   const { user } = useAuth();
@@ -26,7 +25,6 @@ function Router() {
             <Route path="/product-add" element={<ProductAdd />} />
             <Route path="/product-view" element={<ProductView />} />
             <Route path="/product-edit" element={<ProductEdit />} />
-            <Route path="/product-remove" element={<ProductRemove />} />
             <Route path="*" element={<Navigate to="/all-order" />} />
           </Route>
         </>
