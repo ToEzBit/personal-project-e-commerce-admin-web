@@ -4,6 +4,7 @@ import AllOrdersItem from "./AllOrdersItem.jsx.jsx";
 
 function AllOrders() {
   const { excludeNewOrder } = useOrder();
+  console.log(excludeNewOrder);
 
   return (
     <div className="flex flex-col mt-12">
@@ -54,6 +55,7 @@ function AllOrders() {
                       createdAt={el.createdAt}
                       status={el.status}
                       totalPrice={el.totalPrice}
+                      discount={el.discount}
                       address={el.Address}
                       user={el.User}
                       OrderProducts={el.OrderProducts}

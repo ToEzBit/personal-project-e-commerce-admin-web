@@ -6,6 +6,7 @@ function AllOrdersItem({
   createdAt,
   status,
   totalPrice,
+  discount,
   OrderProducts,
   user,
   address,
@@ -35,6 +36,8 @@ function AllOrdersItem({
             address={address}
             slip={slip}
             trackingNumber={trackingNumber}
+            discount={discount}
+            totalPrice={totalPrice}
           />
         </td>
       </tr>

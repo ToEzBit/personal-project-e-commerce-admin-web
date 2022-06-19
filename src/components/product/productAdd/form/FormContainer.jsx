@@ -67,7 +67,6 @@ function FormContainer({
           <SelectOption value="rg" />
           <SelectOption value="mg" />
           <SelectOption value="pg" />
-          <SelectOption value="mega" />
         </SelectContainer>
         <SelectContainer
           title="Product Role"

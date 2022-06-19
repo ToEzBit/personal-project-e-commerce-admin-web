@@ -11,6 +11,8 @@ function ModalContainer({
   address,
   slip,
   trackingNumber,
+  discount,
+  totalPrice,
 }) {
   return (
     <>
@@ -30,6 +32,8 @@ function ModalContainer({
               address={address}
               slip={slip}
               trackingNumber={trackingNumber}
+              discount={discount}
+              totalPrice={totalPrice}
             />
           </div>
         </div>
